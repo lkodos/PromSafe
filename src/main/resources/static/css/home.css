@@ -1,0 +1,12 @@
+.title {
+    display: inline-block;
+    margin-left: 50px ;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+}
+
+.title:hover {
+    background-color: #80c2ee;
+}
