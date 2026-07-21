@@ -1,5 +1,7 @@
 package ru.lkodos.promsafe.service;
 
+import jakarta.annotation.PostConstruct;
+import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.lkodos.promsafe.entity.Question;
@@ -12,12 +14,16 @@ public class QuestionService {
 
     private final QuestionRepository questionRepository;
 
+    @Getter
+    private List<Question> questions;
+
     @Autowired
     public QuestionService(QuestionRepository questionRepository) {
         this.questionRepository = questionRepository;
     }
 
-    public List<Question> getAllQuestions() {
-        return questionRepository.findAll();
+    @PostConstruct
+    public void init() {
+        questions = questionRepository.findAll();
     }
 }

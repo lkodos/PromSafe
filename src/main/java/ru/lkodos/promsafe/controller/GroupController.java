@@ -23,15 +23,9 @@ public class GroupController {
         this.appProperties = appProperties;
     }
 
-//    @GetMapping("/group4")
-//    public String getGroup4Page(@RequestParam(name = "question") int questionNumber, Model model) {
-//        model.addAttribute("questionsAmtGroup4", appProperties.questionsAmtGroup4());
-//        return "group-4";
-//    }
-
     @GetMapping("/group4")
     public String question(@RequestParam(name = "question") int questionNumber, Model model) {
-        List<Question> allQuestions = questionService.getAllQuestions();
+        List<Question> allQuestions = questionService.getQuestions();
         model.addAttribute("currentQuestion", allQuestions.get(questionNumber - 1));
         model.addAttribute("questionsAmtGroup4", appProperties.questionsAmtGroup4());
         model.addAttribute("questionNumber", questionNumber);
