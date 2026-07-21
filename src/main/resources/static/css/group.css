@@ -1,6 +1,11 @@
 body {
     background-color: #eeecdf;
     margin: 2px;
+    font-family: "Segoe UI", sans-serif;
+}
+
+p {
+    margin: 1px 0;
 }
 
 .label {
@@ -20,8 +25,29 @@ body {
 }
 
 .questions {
+    height: 100vh;
     background-color: white;
     padding: 5px;
+    overflow-y: auto;
+}
+
+.question {
+    padding: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.questions a {
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+
+.questions a.active {
+    display: block;
+    text-decoration: none;
+    color: black;
+    background-color: #80c2ee
 }
 
 .right-container {
@@ -48,3 +74,12 @@ body {
     background-color: #eeecdf;
     flex-shrink: 0;
 }
+
+/*.link {*/
+/*    text-decoration: none;*/
+/*    color: black;*/
+/*}*/
+
+/*.link:hover {*/
+/*    background-color: #80c2ee;*/
+/*}*/
