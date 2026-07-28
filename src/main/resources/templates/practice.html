@@ -9,8 +9,8 @@
 
 <div class="all-container">
     <div class="questions">
-        <a th:href="@{/group3(question=${i})}"
-           th:each="i : ${#numbers.sequence(1, questionsAmtGroup3)}"
+        <a th:href="@{/practice/{group}(group=${group}, questionNumber=${i})}"
+           th:each="i : ${#numbers.sequence(1, questionAmount)}"
            th:text="|Вопрос ${i}|"
            th:classappend="${questionNumber == i} ? ' active'"></a>
         <br>

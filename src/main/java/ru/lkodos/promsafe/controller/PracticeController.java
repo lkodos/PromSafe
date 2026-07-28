@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import ru.lkodos.promsafe.config.AppProperties;
 import ru.lkodos.promsafe.entity.Question;
@@ -12,36 +13,38 @@ import ru.lkodos.promsafe.service.QuestionService;
 import java.util.List;
 
 @Controller
-public class GroupController {
+public class PracticeController {
 
     private final QuestionService questionService;
     private final AppProperties appProperties;
 
     @Autowired
-    public GroupController(QuestionService questionService, AppProperties appProperties) {
+    public PracticeController(QuestionService questionService, AppProperties appProperties) {
         this.questionService = questionService;
         this.appProperties = appProperties;
     }
 
-    @GetMapping("/group3")
-    public String getQuestionGroup3(@RequestParam(name = "question") int questionNumber, Model model) {
-        List<Question> allQuestions = questionService.getQuestions();
-        model.addAttribute("currentQuestion", allQuestions.get(questionNumber - 1));
-        model.addAttribute("questionsAmtGroup3", appProperties.questionsAmtGroup3());
-        model.addAttribute("questionNumber", questionNumber);
-        System.out.println(questionNumber);
-        System.out.println(allQuestions);
-        return "group-3";
+    @GetMapping("/select-group/{group}")
+    public String selectGroup(@PathVariable int group) {
+        return "redirect:/practice/" + group + "?questionNumber=1";
     }
 
-    @GetMapping("/group4")
-    public String getQuestionGroup4(@RequestParam(name = "question") int questionNumber, Model model) {
+    @GetMapping("/practice/{group}")
+    public String getPracticePage(@PathVariable int group,
+                                  @RequestParam(name = "questionNumber") int questionNumber,
+                                  Model model) {
+        int questionAmount = 0;
+        if (group == 3) {
+            questionAmount = appProperties.questionsAmtGroup3();
+        } else if (group == 4) {
+            questionAmount = appProperties.questionsAmtGroup4();
+        }
         List<Question> allQuestions = questionService.getQuestions();
         model.addAttribute("currentQuestion", allQuestions.get(questionNumber - 1));
-        model.addAttribute("questionsAmtGroup4", appProperties.questionsAmtGroup4());
+        model.addAttribute("questionAmount", questionAmount);
         model.addAttribute("questionNumber", questionNumber);
         System.out.println(questionNumber);
         System.out.println(allQuestions);
-        return "group-4";
+        return "practice";
     }
 }
