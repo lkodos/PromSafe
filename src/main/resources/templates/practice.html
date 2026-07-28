@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Обучение - 2. Непромышленные до 1000 В - III группа</title>
-    <link rel="stylesheet" href="/css/group.css">
+    <link rel="stylesheet" href="/css/practice.css">
 </head>
 <body>
 
 <div class="all-container">
     <div class="questions">
-        <a th:href="@{/practice/{group}(group=${group}, questionNumber=${i})}"
+        <a th:href="@{/practice/{group}/{questionNumber}(group=${group}, questionNumber=${i})}"
            th:each="i : ${#numbers.sequence(1, questionAmount)}"
            th:text="|Вопрос ${i}|"
            th:classappend="${questionNumber == i} ? ' active'"></a>
@@ -18,7 +18,8 @@
     <div class="right-container">
         <div class="menu-container">
             <div class="theme">
-                <span>Сборник вопросов по курсу "Эксплуатация электроустановок непромышленных потребителей (IV группа до 1000 В)."</span>
+                <span th:if="${group} == 3">Сборник вопросов по курсу "Эксплуатация электроустановок непромышленных потребителей (III группа до 1000 В)."</span>
+                <span th:if="${group} == 4">Сборник вопросов по курсу "Эксплуатация электроустановок непромышленных потребителей (IV группа до 1000 В)."</span>
             </div>
         </div>
         <span class="label">Текст вопроса</span>

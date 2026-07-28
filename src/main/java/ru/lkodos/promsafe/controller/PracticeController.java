@@ -5,7 +5,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
 import ru.lkodos.promsafe.config.AppProperties;
 import ru.lkodos.promsafe.entity.Question;
 import ru.lkodos.promsafe.service.QuestionService;
@@ -26,12 +25,12 @@ public class PracticeController {
 
     @GetMapping("/select-group/{group}")
     public String selectGroup(@PathVariable int group) {
-        return "redirect:/practice/" + group + "?questionNumber=1";
+        return "redirect:/practice/" + group + "/1";
     }
 
-    @GetMapping("/practice/{group}")
+    @GetMapping("/practice/{group}/{questionNumber}")
     public String getPracticePage(@PathVariable int group,
-                                  @RequestParam(name = "questionNumber") int questionNumber,
+                                  @PathVariable int questionNumber,
                                   Model model) {
         int questionAmount = 0;
         if (group == 3) {
