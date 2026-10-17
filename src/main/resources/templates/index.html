@@ -1,10 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>PromSafe</title>
+    <link rel="stylesheet" th:href="@{/css/index.css}">
 </head>
 <body>
-promsafe
+<form action="#" class="form">
+    <div class="content">
+        <details>
+            <summary>
+                V. Работники организаций потребителей электрической энергии
+            </summary>
+            <div class="form-row">
+                <input type="radio" id="3" name="section" value="before_1000_group_3">
+                <label for="3">1. Непромышленные до 1000 В - III группа 010926</label>
+            </div>
+            <div class="form-row">
+                <input type="radio" id="4" name="section" value="before_1000_group_4">
+                <label for="4">2. Непромышленные до 1000 В - IV группа 010926</label>
+            </div>
+        </details>
+    </div>
+    <div class="buttons">
+        <button type="submit" name="action" value="training" class="button">Запустить обучение</button>
+        <button type="submit" name="action" value="exam" class="button">Пробный экзамен</button>
+        <button type="submit" name="action" value="edit" class="button">Редактор</button>
+    </div>
+</form>
 </body>
 </html>
