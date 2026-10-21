@@ -1,0 +1,119 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: "Tahoma", sans-serif;
+    background: white;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    min-height: 30px;
+    padding: 3px;
+}
+
+header h1 {
+    font-weight: normal;
+    font-size: 12px;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    background: #eceadd;
+    padding: 3px;
+    gap: 5px
+}
+
+aside {
+    min-width: 100px;
+    border: 1px solid black;
+    background: white;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.content h3 {
+    font-size: 12px;
+    margin: 3px 0;
+}
+
+.topic {
+    display: flex;
+    min-height: 65px;
+    border: 1px solid black;
+    padding: 3px 3px 3px 40px;
+    align-items: center;
+
+}
+
+.topic h2{
+    font-weight: normal;
+    font-size: 12px;
+}
+
+.question {
+    border: 1px solid black;
+    padding: 3px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.form-row {
+    background: #d0dfea;
+    padding: 3px;
+}
+
+.answers {
+    background: white;
+    padding: 3px 15px 3px 3px;
+    flex-grow: 1;
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    min-height: 40px;
+    flex-shrink: 0;
+    align-items: center;
+}
+
+.button {
+    height: 32px;
+    width: 130px;
+    font-family: "Tahoma", sans-serif;
+    font-size: 16px;
+    background: #dfdfdf;
+    border: 2px solid #b5b5b5;
+}
+
+.button:hover {
+    background: #e3effa;
+    border: 2px solid #4f85b0;
+}
+
+.button:active {
+    background: #c9e0f4;
+    outline: 1px dotted black;
+    outline-offset: -4px;
+}
