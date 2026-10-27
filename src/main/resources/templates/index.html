@@ -6,18 +6,18 @@
     <link rel="stylesheet" th:href="@{/css/index.css}">
 </head>
 <body>
-<form th:action="@{/training}" class="form" method="GET">
+<form th:action="@{/mode-select}" class="form" method="GET">
     <div class="content">
         <details>
             <summary>
                 V. Работники организаций потребителей электрической энергии
             </summary>
             <div class="form-row">
-                <input type="radio" id="3" name="section" value="before_1000_group_3">
+                <input type="radio" id="3" name="section" value="before_1000_group_3" required>
                 <label for="3">1. Непромышленные до 1000 В - III группа 010926</label>
             </div>
             <div class="form-row">
-                <input type="radio" id="4" name="section" value="before_1000_group_4">
+                <input type="radio" id="4" name="section" value="before_1000_group_4" required>
                 <label for="4">2. Непромышленные до 1000 В - IV группа 010926</label>
             </div>
         </details>

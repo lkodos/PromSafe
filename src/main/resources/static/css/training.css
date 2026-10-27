@@ -13,6 +13,7 @@ body {
     flex-direction: column;
     font-family: "Tahoma", sans-serif;
     background: white;
+    overflow: hidden;
 }
 
 header {
@@ -37,9 +38,36 @@ header h1 {
 }
 
 aside {
-    min-width: 100px;
-    border: 1px solid black;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    height: 100vh;
+    width: 150px;
+    flex-shrink: 0;
     background: white;
+    padding: 3px;
+    align-items: center;
+    border: 1px solid black;
+    overflow-y: auto;
+}
+
+aside a {
+    display: inline-block;
+    width: 80px;
+    text-align: left;
+    margin-top: 5px;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+aside a:last-child {
+    margin-bottom: 40px;
+}
+
+aside a:active {
+    background: #0077d5;
 }
 
 .content {

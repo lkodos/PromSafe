@@ -13,7 +13,7 @@
 
 <div class="main-container">
     <aside class="questions">
-
+        <a href="#" th:each="i : ${#numbers.sequence(1, questionsCount)}" th:text="|Вопрос ${i}|"></a>
     </aside>
     <div class="content">
         <div class="topic">

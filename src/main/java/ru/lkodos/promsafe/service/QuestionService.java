@@ -15,5 +15,7 @@ public class QuestionService {
 
     private final QuestionRepository questionRepository;
 
-    public List<Question> allQuestions = questionRepository.findAll();
+    public List<Question> getAllQuestions() {
+        return questionRepository.findAll();
+    }
 }

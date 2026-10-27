@@ -1,0 +1,16 @@
+DROP TABLE IF EXISTS answers;
+DROP TABLE IF EXISTS questions;
+
+CREATE TABLE IF NOT EXISTS questions
+(
+    id       INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    question TEXT UNIQUE NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS answers
+(
+    id          INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    answer      TEXT    NOT NULL UNIQUE,
+    is_correct  BOOLEAN NOT NULL,
+    question_id INT     NOT NULL REFERENCES questions (id) ON DELETE CASCADE
+);
