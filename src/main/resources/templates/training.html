@@ -13,7 +13,7 @@
 
 <div class="main-container">
     <aside class="questions">
-        <a href="#" th:each="i : ${#numbers.sequence(1, questionsCount)}" th:text="|Вопрос ${i}|"></a>
+        <a th:href="@{/training/{questionNumber}(questionNumber=${i})}" th:each="i : ${#numbers.sequence(1, questions.size())}" th:text="|Вопрос ${i}|"></a>
     </aside>
     <div class="content">
         <div class="topic">
@@ -21,7 +21,7 @@
         </div>
         <h3>Текст вопроса</h3>
         <div class="question">
-            <span>Вопрос 1</span>
+            <span th:text="|Вопрос ${questionNumber}: ${questions[questionNumber - 1].question}|"></span>
         </div>
         <h3>Варианты ответов</h3>
         <form action="#" class="form">
@@ -37,6 +37,8 @@
         </form>
     </div>
 </div>
+
+trainng
 
 </body>
 </html>
