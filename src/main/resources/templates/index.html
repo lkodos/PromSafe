@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Обучающая программа</title>
+  <link rel="stylesheet" th:href="@{/css/index.css}">
+</head>
+<body>
+
+<form action="#" method="GET" class="form">
+  <details class="spoiler">
+    <summary>
+      (S5) V. Работники организаций потребителей электрической энергии
+    </summary>
+    <div class="form-row">
+      <input type="radio" id="group-4" name="section" value="non-prom_before_1000_group_4">
+      <label for="group-4">2. Непромышленные до 1000В - IV группа 010926</label>
+    </div>
+  </details>
+  <div class="button-container">
+    <button type="submit" name="action" value="training" class="button">Запустить обучение</button>
+    <button type="submit" name="action" value="exam" class="button">Пробный экзамен</button>
+    <button type="submit" name="action" value="exit" class="button">Выход</button>
+  </div>
+</form>
+
+</body>
+</html>
