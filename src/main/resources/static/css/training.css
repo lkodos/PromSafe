@@ -9,7 +9,104 @@ html, body {
 }
 
 body {
-    font-family: "Segoe UI", sans-serif;
+    font-family: "Tahoma", sans-serif;
     font-size: 12pt;
-    /*background: #ebebeb;*/
+    background: #eceadd;
+}
+
+.content-container {
+    display: flex;
+    height: 100%;
+    gap: 5px;
+    padding: 3px;
+}
+
+.questions {
+    min-width: 120px;
+    height: 100%;
+    background: white;
+    border: 1px solid black;
+}
+
+.right-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 3px;
+}
+
+.section {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    border: 1px solid black;
+}
+
+.section h1 {
+    font-size: 14px;
+    font-weight: normal;
+    margin-left: 50px;
+}
+
+p {
+    font-size: 13px;
+    font-weight: bold;
+    margin-left: 3px;
+}
+
+.question {
+    /*min-height: 10px;*/
+    border: 1px solid black;
+    padding: 3px 3px 3px 5px;
+    /*font-weight: bold;*/
+}
+
+.form-container {
+    height: 100%;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    background: #d1dfea;
+    padding: 3px;
+    gap: 15px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.answers-container {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    flex-grow: 1;
+    padding: 3px 20px 3px 3px;
+    gap: 5px;
+}
+
+.button-container {
+    height: 40px;
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.button-container button {
+    width: 120px;
+    height: 35px;
+    background: #dfdfdf;
+    border: 1px solid #bdbcb8;
+    font-weight: bold;
+    margin-right: 3px;
 }
