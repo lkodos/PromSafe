@@ -30,12 +30,13 @@ body {
 .form-row {
     display: flex;
     align-items: center;
+    margin-top: 5px;
+    margin-left: 20px;
     gap: 10px;
 }
 
-.form-row {
-    margin-left: 20px;
-    margin-top: 5px;
+.form-row label {
+    margin-top: 2px;
 }
 
 .button-container {
