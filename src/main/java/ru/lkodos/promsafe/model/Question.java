@@ -17,9 +17,10 @@ public class Question {
     @Column(name = "id")
     private Integer id;
 
-    @Column(name = "question")
+    @Column(name = "question", columnDefinition = "TEXT", nullable = false, unique = true)
     private String question;
 
-    @Column(name = "section")
-    private String section;
+    @ManyToOne
+    @JoinColumn(name = "section_id")
+    private Section section;
 }
