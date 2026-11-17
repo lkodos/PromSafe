@@ -9,6 +9,10 @@
 
 <div class="content-container">
     <aside class="questions">
+        <a href="#"
+           th:each="_, stat : ${allQuestions}"
+           th:text="'Вопрос ' + ${stat.count}">
+        </a>
 
     </aside>
     <div class="right-container">
