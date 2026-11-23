@@ -7,17 +7,17 @@
 </head>
 <body>
 
-<form action="#" class="mode-form">
+<form action="/mode" method="GET" class="mode-form">
     <details class="mode-form__section">
         <summary class="mode-form__summary">
             (S5) V. Работники организаций потребителей электрической энергии
         </summary>
         <div class="mode-form__row">
-            <input type="radio" id="group-3" name="section" value="before_1000_group_3" class="mode-form__radio">
+            <input type="radio" id="group-3" name="section" value="before_1000_group_3" class="mode-form__radio" required>
             <label for="group-3" class="mode-form__label">1. Непромышленные до 1000В - III группа 010926</label>
         </div>
         <div class="mode-form__row">
-            <input type="radio" id="group-4" name="section" value="before_1000_group_4" class="mode-form__radio">
+            <input type="radio" id="group-4" name="section" value="before_1000_group_4" class="mode-form__radio" required>
             <label for="group-4" class="mode-form__label">2. Непромышленные до 1000В - IV группа 010926</label>
         </div>
     </details>
