@@ -22,4 +22,8 @@ public class Answer {
 
     @Column(name = "is_correct", nullable = false)
     private boolean correct;
+
+    @ManyToOne
+    @JoinColumn(name = "question_id", nullable = false)
+    private Question question;
 }
