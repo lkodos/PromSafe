@@ -11,7 +11,8 @@
     <a href="#"
        class="quiz__link"
        th:each="i : ${#numbers.sequence(1, questionCount)}"
-       th:text="|Вопрос ${i}|">
+       th:classappend="${i == currentQuestion} ? 'active'">
+        <span th:text="|Вопрос ${i}|"></span>
     </a>
 </aside>
 <div class="quiz__content">

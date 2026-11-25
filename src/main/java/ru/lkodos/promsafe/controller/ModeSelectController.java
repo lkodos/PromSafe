@@ -28,6 +28,7 @@ public class ModeSelectController {
         }
         long questionCount = questionService.getQuestionCount();
         model.addAttribute("questionCount", questionCount);
+        model.addAttribute("currentQuestion", 1);
         return action;
     }
 }

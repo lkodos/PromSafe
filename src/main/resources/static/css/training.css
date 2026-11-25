@@ -11,7 +11,7 @@ html, body {
 
 body {
     font-family: "Tahoma", sans-serif;
-    font-size: 12pt;
+    font-size: 16px;
     background: #eceadd;
     display: flex;
     padding: 3px;
@@ -22,12 +22,53 @@ body {
     background: white;
     border: 1px solid black;
     height: 100%;
-    width: 100px;
+    width: 135px;
+    padding-top: 3px;
+    padding-bottom: 3px;
     overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
 }
 
 .quiz__link {
     display: block;
+    color: black;
+    width: 100%;
+    text-decoration: none;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.quiz__link span {
+    padding: 2px;
+}
+
+.quiz__link::before {
+    content: "?";
+    display: inline-block;
+    width: 16px;
+    /*margin-right: 3px;*/
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #0077d5;
+}
+
+.quiz__link.active span {
+    background: #0077d5;
+}
+
+.quiz__link.correct::before {
+    content: "✓";
+    color: green;
+}
+
+.quiz__link.incorrect::before {
+    content: "✕";
+    color: red;
 }
 
 .quiz__content {
