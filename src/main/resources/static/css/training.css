@@ -23,6 +23,11 @@ body {
     border: 1px solid black;
     height: 100%;
     width: 100px;
+    overflow-y: auto;
+}
+
+.quiz__link {
+    display: block;
 }
 
 .quiz__content {
