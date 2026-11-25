@@ -8,8 +8,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.server.ResponseStatusException;
+import ru.lkodos.promsafe.model.Question;
 import ru.lkodos.promsafe.service.QuestionService;
 
+import java.util.List;
 import java.util.Set;
 
 @Controller
@@ -26,9 +28,10 @@ public class ModeSelectController {
         if (!MODES.contains(action)) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Неизвестное действие: " + action);
         }
-        long questionCount = questionService.getQuestionCount();
-        model.addAttribute("questionCount", questionCount);
+        List<Question> allQuestions = questionService.getAllQuestions();
+        model.addAttribute("questionCount", allQuestions.size());
         model.addAttribute("currentQuestion", 1);
+        model.addAttribute("question", allQuestions.getFirst().getText());
         return action;
     }
 }

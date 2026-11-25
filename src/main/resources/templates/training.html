@@ -20,7 +20,7 @@
         <h1>Сборник вопросов по курсу "Эксплуатация электроустановок непромышленных потребителей (IV группа до 1000 В)"</h1>
     </div>
     <p class="quiz__label">Текст вопроса</p>
-    <div class="quiz__question-text">Вопрос</div>
+    <div th:text="|Вопрос ${currentQuestion}: ${question}|" class="quiz__question-text">Вопрос</div>
     <p class="quiz__label">Варианты ответов</p>
     <form action="#" class="quiz-form">
         <div class="quiz-form__answers">

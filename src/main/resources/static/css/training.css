@@ -22,7 +22,7 @@ body {
     background: white;
     border: 1px solid black;
     height: 100%;
-    width: 135px;
+    min-width: 135px;
     padding-top: 3px;
     padding-bottom: 3px;
     overflow-y: auto;
